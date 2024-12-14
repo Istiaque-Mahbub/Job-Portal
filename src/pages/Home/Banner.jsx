@@ -21,10 +21,10 @@ const Banner = () => {
           <div className='flex-1'>
             <motion.h1
              animate={{x:50}}
-             transition={{duration:2, delay:2, ease:easeOut, repeat:Infinity}}
+             transition={{duration:2, delay:2, ease:easeOut}}
             className="text-5xl font-bold">Latest <motion.span 
             animate={{color:['#33feff ','#8992b6']}}
-            transition={{duration:1, repeat:Infinity}}
+            transition={{duration:2,delay:2,repeat:Infinity}}
             >Jobs</motion.span> for You!</motion.h1>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
