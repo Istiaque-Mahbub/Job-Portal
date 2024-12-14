@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext/AuthContext';
 
 const NavBar = () => {
+    const {user,userSignOut} = useContext(AuthContext)
+    const handleSignOut=()=>{
+        userSignOut()
+        .then(()=>{
+            console.log('successful signout')
+        })
+        .catch(error=>{
+            console.log('Failed to sign out')
+        })
+    }
     const links = <>
        <li><a>Item 1</a></li>
       
@@ -39,8 +50,17 @@ const NavBar = () => {
     </ul>
   </div>
   <div className="navbar-end space-x-5">
-    <Link className='text-blue-600 underline' to={'/register'}>Register</Link>
-    <a className="btn">Sing In</a>
+
+    {
+       user ? <>
+       <Link to={'/signIn'}><button onClick={handleSignOut} className="btn">Log Out</button></Link>
+       </> 
+       : <>
+       <Link className='text-blue-600 underline' to={'/register'}>Register</Link>
+       <Link to={'/signIn'}><button className="btn">Sing In</button></Link>
+       </>
+    }
+    
   </div>
 </div>
     );
