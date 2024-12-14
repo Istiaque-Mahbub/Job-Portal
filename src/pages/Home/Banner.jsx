@@ -15,7 +15,7 @@ const Banner = () => {
         <motion.img
             src={team2}
             animate={{x:[200,250,200]}}
-            transition={{duration:10, repeat:Infinity}}
+            transition={{duration:10, delay:2, repeat:Infinity}}
             className="max-w-sm w-64 rounded-t-[40px] rounded-br-[40px] border-l-4 border-b-4 border-blue-600 shadow-2xl" />
         </div>
           <div className='flex-1'>

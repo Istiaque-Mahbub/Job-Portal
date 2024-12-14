@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import logInLottieData from '../../assets/lottie/login.json'
 import Lottie from 'lottie-react';
 import AuthContext from '../../context/AuthContext/AuthContext';
+import SocialLogin from '../shared/SocialLogin';
 const SignIn = () => {
     const {signInUser,user,loading} = useContext(AuthContext)
     const handleSignIn = e => {
@@ -48,6 +49,9 @@ const SignIn = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+            <div>
+                <SocialLogin></SocialLogin>
+            </div>
           </div>
         </div>
       </div>
