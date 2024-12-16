@@ -1,9 +1,11 @@
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 
 const AddJob = () => {
     const {user} = useAuth();
+    const navigate = useNavigate();
     const handleAddJob = e =>{
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -40,6 +42,7 @@ const AddJob = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
+                  navigate('/myPostedJobs')
             }
         })
 
@@ -104,7 +107,7 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">Application Dateline</span>
                     </label>
-                    <input type="text" name="dateline" placeholder="Application Dateline" className="input input-bordered" required />
+                    <input type="date" name="applicationDateline" placeholder="applicationDateline" className="input input-bordered" required />
                 </div>
                 {/* description */}
                 <div className="form-control">
@@ -140,7 +143,7 @@ const AddJob = () => {
                     <input type="text" name="max" placeholder="Max" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
-                    <select defaultValue="Currency" name="currency" className="select select-ghost w-full max-w-xs">
+                    <select defaultValue="currency" name="currency" className="select select-ghost w-full max-w-xs">
                         <option disabled>Currency</option>
                         <option>bdt</option>
                         <option>usd</option>
@@ -170,12 +173,12 @@ const AddJob = () => {
                     </label>
                     <input type="text" defaultValue={user?.email} name="hr_email" placeholder="HR Email" className="input input-bordered" required />
                 </div>
-                {/* hr email */}
+                {/* logo */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Company Logo URL</span>
                     </label>
-                    <input type="url" name="logo" placeholder="Logo URL" className="input input-bordered" required />
+                    <input type="url" name="company_logo" placeholder="Logo URL" className="input input-bordered" required />
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Add a Job</button>
