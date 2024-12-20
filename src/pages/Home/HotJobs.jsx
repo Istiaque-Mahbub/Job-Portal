@@ -5,7 +5,7 @@ import HotJobCard from "./HotJobCard";
 const HotJobs = () => {
     const [jobs,setJobs] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/jobs')
+        fetch('https://job-portal-server-iota-steel.vercel.app/jobs')
         .then(res=>res.json())
         .then(data=>{
             setJobs(data)

@@ -22,7 +22,7 @@ const SignIn = () => {
         console.log(res.user)
         
         // navigate(from)
-        // axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+        // axios.post('https://job-portal-server-iota-steel.vercel.app/jwt', user, { withCredentials: true })
         //   .then(res => {
         //     console.log(res.data);
         //   })
